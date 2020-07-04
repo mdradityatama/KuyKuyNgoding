@@ -1,0 +1,27 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+use Carbon\Carbon;
+
+class ExperiencesSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $faker = Faker::create('id_ID');
+
+        DB::table('Experiences')->insert([
+            'Title'         => $faker->company,
+            'Description'   => $faker->text($maxNbChars = 200),
+            'PathPhoto'      => 'masih_kosong_gais.png',
+            'Information_ID'=> 1,
+            'created_at'    => Carbon::now(),
+            'updated_at'    => Carbon::now()
+        ]);
+    }
+}
