@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use Carbon\Carbon;
 
-class InformationsTableSeeder extends Seeder
+class SkillsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,14 +15,9 @@ class InformationsTableSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-        DB::table('Informations')->insert([
-            'Name'          => $faker->name,
+        DB::table('Skills')->insert([
             'Title'         => $faker->jobTitle,
-            'City'          => $faker->city,
-            'Religion'      => 'Islam',
-            'Nationality'   => $faker->country,
-            'Photoprofile'  => 'masih_kosong_gais.png',
-            'Summery'       => $faker->text,
+            "Information_ID"=> 1,
             'created_at'    => Carbon::now(),
             'updated_at'    => Carbon::now()
         ]);
