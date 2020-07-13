@@ -17,6 +17,7 @@ Route::group([
     Route::get("/skill", "DashboardController@index");    
     Route::get("/certificate", "DashboardController@index");    
     Route::get("/experience", "DashboardController@index");
+    Route::get("/profile", "Dashboard\ProfileController@index");
 });
     
 Route::get('/login', "AuthController@getLogin")->middleware("guest")->name("login");
