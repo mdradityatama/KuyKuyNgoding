@@ -19,3 +19,10 @@ Route::get('/', function () {
 
 Route::get("/test/{text}", "TestController@index");
 Route::get("/devtest", "TestController@dev");
+
+Route::group(['prefix' => '/dashboard'], function () {
+    Route::get("/", "DashboardController@index");    
+    Route::get("/skill", "DashboardController@index");    
+    Route::get("/certificate", "DashboardController@index");    
+    Route::get("/experience", "DashboardController@index");
+});
