@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Profile</b>Kita',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'ProfileKita',
 
     /*
     |--------------------------------------------------------------------------
@@ -244,22 +244,27 @@ return [
         [
             'text'        => 'Home',
             'url'         => 'dashboard',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-fw fa-home',
         ],
         [
             'text'        => 'Skill',
             'url'         => 'dashboard/skill',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-fw fa-hand-sparkles',
         ],
         [
             'text'        => 'Certificate',
             'url'         => 'dashboard/certificate',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-fw fa-certificate',
         ],
         [
             'text'        => 'Experience',
             'url'         => 'dashboard/experience',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-fw fa-building',
+        ],
+        [
+            'text'        => 'Preview',
+            'url'         => '/',
+            'icon'        => 'fas fa-fw fa-globe',
         ],
         ['header' => 'account_settings'],
         [
