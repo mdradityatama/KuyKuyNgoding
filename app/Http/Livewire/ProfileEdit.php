@@ -29,6 +29,10 @@ class ProfileEdit extends Component
 
     public function update()
     {
+        $this->validate([
+            'name' => 'min:3',
+        ]);
+
         $this->data->update([
             'name' => $this->name,
             'email' => $this->email

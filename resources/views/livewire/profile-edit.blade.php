@@ -14,7 +14,12 @@
                         @endif
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input wire:model="name" type="text" name="name" class="form-control" id="name" placeholder="Enter Name" value="{{ $data->name }}"> 
+                            <input wire:model="name" type="text" name="name" class="form-control @error("name") is-invalid @enderror" id="name" placeholder="Enter Name" value="{{ $data->name }}"> 
+                            @error('name')
+                                <span class="invalid-feedback">
+                                    {{ $message }}
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
