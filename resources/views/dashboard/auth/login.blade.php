@@ -25,10 +25,15 @@
                 <h3 class="card-title float-none text-center">Sign in to start</h3>
             </div>
             <div class="card-body login-card-body ">
+                @if ($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        {{ $errors->first() }}
+                    </div>
+                @endif
                 <form action="{{ url('/login') }}" method="post">
                     {{ @csrf_field() }}
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" value="" placeholder="Email" autofocus>
+                        <input type="text" name="email" class="form-control" value="{{ old('email') }}" placeholder="Email atau Username" autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope "></span>

@@ -20,9 +20,12 @@ class CreateInformationsTable extends Migration
             $table->string('City');
             $table->string('Religion');
             $table->string('Nationality');
-            $table->string('Photoprofile');
+            $table->string('PhotoProfile');
             $table->string('Summery');
+            $table->integer('User_ID')->unsigned();
             $table->timestamps();
+
+            $table->foreign('User_ID')->references('UserID')->on('Users');
         });
     }
 

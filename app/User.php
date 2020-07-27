@@ -8,6 +8,8 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    protected $table = "Users";
+    protected $primaryKey = "UserID";
     use Notifiable;
 
     /**
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'Name', 'Username', 'Phone', 'Email', 'Password',
     ];
 
     /**
@@ -25,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'Password', 'remember_token',
     ];
 
     /**
@@ -34,6 +36,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'Email_Verified_At' => 'datetime',
     ];
+
+    public function Information()
+    {
+        return $this->hasOne('App\Information', 'User_ID', 'UserID');
+    }
 }

@@ -13,13 +13,13 @@ class SkillsSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create('id_ID');
+        $faker = Faker::create("id_ID");
 
-        DB::table('Skills')->insert([
-            'Title'         => $faker->jobTitle,
+        DB::table("Skills")->insert([
+            "Title"         => $faker->jobTitle,
             "Information_ID"=> 1,
-            'created_at'    => Carbon::now(),
-            'updated_at'    => Carbon::now()
+            "created_at"    => Carbon::now(),
+            "updated_at"    => Carbon::now()
         ]);
     }
 }
