@@ -9,6 +9,11 @@ class Information extends Model
     protected $table = "Informations";
     protected $primaryKey = 'InformationID';
     
+    public function User()
+    {
+        return $this->belongsTo('App\User', 'User_ID', 'UserID');
+    }
+    
     public function Certificates()
     {
         return $this->hasMany("App\Certificate", "Information_ID", "InformationID");
