@@ -14,7 +14,7 @@ Route::group([
     "middleware" => "auth"
 ], function () {
     Route::get("/", "DashboardController@index")->name("dashboard");    
-    Route::get("/skill", "DashboardController@index");    
+    Route::get("/skill", "DashboardController@skill");    
     Route::get("/certificate", "DashboardController@index");    
     Route::get("/experience", "DashboardController@index");
     Route::get("/profile", "Dashboard\ProfileController@index");
