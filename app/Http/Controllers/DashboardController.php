@@ -13,4 +13,9 @@ class DashboardController extends Controller
 
         return view("dashboard.index", ["information" => $information]);
     }
+
+    public function skill()
+    {
+        return view("dashboard.skill");
+    }
 }
