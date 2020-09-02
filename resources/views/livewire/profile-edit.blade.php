@@ -22,6 +22,24 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label for="username">Username</label>
+                            <input wire:model="username" type="text" name="username" class="form-control @error("username") is-invalid @enderror" id="username" placeholder="Enter Username" value="{{ $data->username }}"> 
+                            @error('username')
+                                <span class="invalid-feedback">
+                                    {{ $message }}
+                                </span>     
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input wire:model="phone" type="text" name="phone" class="form-control @error("phone") is-invalid @enderror" id="phone" placeholder="Enter Phone" value="{{ $data->phone }}"> 
+                            @error('phone')
+                                <span class="invalid-feedback">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label for="email">Email</label>
                             <input wire:model="email" type="email" name="email" class="form-control" id="email" value="{{ $data->email }}" disabled>
                         </div>

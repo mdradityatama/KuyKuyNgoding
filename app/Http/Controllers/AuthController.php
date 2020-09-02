@@ -23,14 +23,14 @@ class AuthController extends Controller
         }
         else
         {
-            $user = User::where(['username' => $request->email])->first();
+            $user = User::where(['Username' => $request->email])->first();
         }
 
         if ($user != null)
         {
             if (Hash::check($request->password, $user->Password))
             {
-                $auth = \Auth::loginUsingId($user->UserID);
+                $auth = \Auth::loginUsingId($user->UserID, $request->remember);
 
                 return redirect()->route('dashboard')->with(["Message" => "Login Succes!, Welcome $user->Name"]);
             }

@@ -11,15 +11,20 @@ class ProfileEdit extends Component
     public $data;
 
     public $name;
+    public $username;
     public $email;
+    public $phone;
     public $password;
     public $password_confirmation;
 
     public function mount()
     {
-        $this->data = User::where("id", \Auth::user()->id)->first();
-        $this->name = $this->data->name;
-        $this->email = $this->data->email;
+        $this->data = \Auth::user()->first();
+
+        $this->name = $this->data->Name;
+        $this->email = $this->data->Email;
+        $this->username = $this->data->Username;
+        $this->phone = $this->data->Phone;
     }
 
     public function render()
@@ -31,10 +36,14 @@ class ProfileEdit extends Component
     {
         $this->validate([
             'name' => 'min:3',
+            'username' => 'min:3',
+            'phone' => 'min:9|max:13'
         ]);
 
         $this->data->update([
             'name' => $this->name,
+            'username' => $this->username,
+            'phone' => $this->phone,
             'email' => $this->email
         ]);
 
