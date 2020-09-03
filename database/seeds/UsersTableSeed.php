@@ -17,8 +17,8 @@ class UsersTableSeed extends Seeder
             "Name" => "admin",
             "Username" => "admin",
             "Phone" => "",
-            "email" => "me@admin.com",
-            "password" => Hash::make("password0!"),
+            "Email" => "me@admin.com",
+            "Password" => Hash::make("password0!"),
             "created_at"    => Carbon::now(),
             "updated_at"    => Carbon::now()
         ]);
