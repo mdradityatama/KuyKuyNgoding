@@ -21,7 +21,7 @@ class InformationsTableSeeder extends Seeder
             "City"          => $faker->city,
             "Religion"      => "Islam",
             "Nationality"   => $faker->country,
-            "Photoprofile"  => "masih_kosong_gais.png",
+            "PhotoProfile"  => "masih_kosong_gais.png",
             "Summery"       => $faker->text,
             "User_ID"       => 1,
             "created_at"    => Carbon::now(),
